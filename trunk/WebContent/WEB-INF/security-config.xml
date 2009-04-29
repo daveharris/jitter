@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-2.0.xsd">
+
+	<security:global-method-security jsr250-annotations="enabled" />
+
+	<security:http auto-config="true" access-denied-page="/denied.htm">
+		<security:form-login login-page="/login.htm" authentication-failure-url="/login.htm?login_error=true" />
+		<security:intercept-url pattern="/**" access="ROLE_ADMIN" />
+		<security:intercept-url pattern="/login.htm" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+	</security:http>
+
+	<security:authentication-provider>
+		<security:jdbc-user-service data-source-ref="dataSource" />			
+		<!--security:user-service properties="/WEB-INF/classes/users.properties" /-->
+	</security:authentication-provider>
+
+	<security:global-method-security secured-annotations="enabled">
+		<security:protect-pointcut expression="execution(* com.springsource..*Service.*(..))" access="ROLE_USER" />
+	</security:global-method-security>
+
+</beans>

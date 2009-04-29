@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+              http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+              
+  <!-- Locate the views (jsp's) -->
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- Simple redirects to internal resources; URL path substring becomes view name (e.g. '/login.htm' -> 'login') -->
+	<bean name="/login.htm" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+	<bean name="/denied.htm" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/errors" />
+	</bean>
+	
+	<!-- This bean definition isn't needed because of @Autowired -->
+	<bean class="com.fronde.harrisd.twitter.controller.HomePageController">
+		<constructor-arg ref="dao"/>
+	</bean>
+
+</beans>
