@@ -2,7 +2,6 @@ package com.fronde.harrisd.twitter.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,13 +15,12 @@ import com.fronde.harrisd.twitter.model.WebModel;
 import com.fronde.harrisd.twitter.persistence.DAO;
 
 @Controller
-@RequestMapping("/home.htm")
 public class HomePageController {
 
 	DAO dao;
 	
 	private HomePageController() {
-		// no-op
+	// Needed for Hibernate
 	}
 
 	// Create the controller with the DAO via Dependendy Injection
@@ -66,6 +64,6 @@ public class HomePageController {
 
 		model.setMessage("Post Added");
 
-		return new ModelAndView("redirect:home.htm", model.getName(), model);
+		return new ModelAndView("redirect:home", model.getName(), model);
 	}
 }

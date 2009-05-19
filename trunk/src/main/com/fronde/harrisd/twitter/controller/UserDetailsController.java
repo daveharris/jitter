@@ -2,8 +2,6 @@ package com.fronde.harrisd.twitter.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,20 +13,18 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fronde.harrisd.twitter.controller.validator.UserValidator;
 import com.fronde.harrisd.twitter.model.User;
 import com.fronde.harrisd.twitter.model.WebModel;
-import com.fronde.harrisd.twitter.persistence.HibernateDAO;
+import com.fronde.harrisd.twitter.persistence.DAO;
 
 @Controller
-@RequestMapping("/userDetails.htm")
 public class UserDetailsController {
 
-	@Autowired
-	HibernateDAO dao;
+	DAO dao;
 	
 	private UserDetailsController() {
 		// Needed for Hibernate
 	}
 	
-	public UserDetailsController(HibernateDAO dao) {
+	public UserDetailsController(DAO dao) {
 		this.dao = dao;
 	}
 
@@ -68,6 +64,6 @@ public class UserDetailsController {
 
 		model.setMessage("User details updated");
 
-		return new ModelAndView("redirect:home.htm", model.getName(), model);
+		return new ModelAndView("redirect:home", model.getName(), model);
 	}
 }

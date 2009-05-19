@@ -9,21 +9,26 @@
               
   <!-- Locate the views (jsp's) -->
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+  	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/jsp/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
-	<!-- Simple redirects to internal resources; URL path substring becomes view name (e.g. '/login.htm' -> 'login') -->
-	<bean name="/login.htm" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
-	<bean name="/denied.htm" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
-	
+	<bean id="handlerMapping" 
+			class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">            
+	  <property name="mappings">
+	    <props>
+	    	<prop key="login.htm">urlFilenameViewController</prop>
+	    	<prop key="logout.htm">urlFilenameViewController</prop>
+	    	<prop key="denied.htm">urlFilenameViewController</prop>
+	    	
+	      <prop key="home.htm">homePageController</prop>
+	      <prop key="userDetails.htm">userDetailsController</prop>
+	    </props>
+	  </property>
+  </bean>
+  
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="/WEB-INF/errors" />
 	</bean>
-	
-	<!-- This bean definition isn't needed because of @Autowired -->
-	<bean class="com.fronde.harrisd.twitter.controller.HomePageController">
-		<constructor-arg ref="dao"/>
-	</bean>
-
 </beans>

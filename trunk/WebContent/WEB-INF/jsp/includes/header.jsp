@@ -18,10 +18,4 @@
 		<meta http-equiv="Cache-Control" content="no-store" />
 		<link rel="stylesheet" type="text/css" href="styles/twitter.css" />
 		<link rel="stylesheet" type="text/css" href="styles/twitter_extra.css" />
-
-		<%--Spring javascript libs --%>
-		<script type="text/javascript" src="<c:url value="/resources/dojo/dojo.js" />"> </script>
-		<script type="text/javascript" src="<c:url value="/resources/spring/Spring.js" />"> </script>
-		<script type="text/javascript" src="<c:url value="/resources/spring/Spring-Dojo.js" />"> </script>
-		<link type="text/css" rel="stylesheet" href="<c:url value="/resources/dijit/themes/tundra/tundra.css" />" />
 	</head>

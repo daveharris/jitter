@@ -60,10 +60,10 @@
 											</span>
 											
 											<span class="entry-meta">
-												<a href="userDetails.htm?id=${post.author.id}" class="entry-date" rel="bookmark">
+												<a href="userDetails?id=${post.author.id}" class="entry-date" rel="bookmark">
 													<span class="published">by &#64;<c:out value="${post.author.screenName}" /></span>
 												</a>
-												<a href="status.htm?id=${post.id}" class="entry-date" rel="bookmark">
+												<a href="status?id=${post.id}" class="entry-date" rel="bookmark">
 													<span class="published">on <c:out value="${post.dateString}" /></span>
 												</a>
 												<span>from web</span>
@@ -88,10 +88,10 @@
 										</span>
 										
 										<span class="entry-meta">
-											<a href="userDetails.htm?id=${post.author.id}" class="entry-date" rel="bookmark">
+											<a href="userDetails?id=${post.author.id}" class="entry-date" rel="bookmark">
 												<span class="published">by &#64;<c:out value="${post.author.screenName}" /></span>
 											</a>
-											<a href="status.htm?id=${post.id}" class="entry-date" rel="bookmark">
+											<a href="status?id=${post.id}" class="entry-date" rel="bookmark">
 												<span class="published">on <c:out value="${post.dateString}" /></span>
 											</a>
 											<span>from web</span>

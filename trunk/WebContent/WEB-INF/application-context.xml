@@ -10,24 +10,23 @@
 							http://www.springframework.org/schema/context
             	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 							
-	<!-- Enable @Autowire annotation -->
-	<context:component-scan base-package="com.fronde.harrisd.twitter.controller" />
+	<!--Enable @Autowire annotation >
+	<context:component-scan base-package="com.fronde.harrisd.twitter.controller" /-->
 
 	<!-- Security Settings -->
 	<import resource="security-config.xml" />
 	
 
 	<!-- Data settings -->
-	<bean id="dao" class="com.fronde.harrisd.twitter.persistence.HibernateDAO">
-		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+	
+	<!-- The actual database to connect to (using built-in pooling and no JIDI lookup) -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/twitter" />
+		<property name="username" value="twitter" />
+		<property name="password" value="twitter" />
 	</bean>
 	
-	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
-  <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-  	<property name="sessionFactory"><ref local="sessionFactory"/></property>
-  </bean>
-  
-
 	<!-- A Hibernate SessionFactory for mapping objects to relation tables -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -43,26 +42,43 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+  <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+  	<property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+  <bean id="hibernateDAO" class="com.fronde.harrisd.twitter.persistence.HibernateDAO">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="dao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager" ref="transactionManager"/>
+		<property name="target" ref="hibernateDAO"/>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
 			</props>
 		</property>
 	</bean>
 
-	<!-- The actual database to connect to (using built-in pooling and no JIDI lookup) -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/twitter" />
-		<property name="username" value="twitter" />
-		<property name="password" value="twitter" />
-	</bean>
-
 	<!-- Translates Hibernate exceptions to Spring Data Access Exceptions -->
 	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
-
-
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<!-- The maximum file size in bytes -->
-		<property name="maxUploadSize" value="100000" />
+	
+	
+	<!-- Controllers -->
+	<bean id="urlFilenameViewController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+	
+	<bean id="homePageController" class="com.fronde.harrisd.twitter.controller.HomePageController">
+		<constructor-arg ref="dao"/>
+	</bean>
+	
+	<bean id="userDetailsController" class="com.fronde.harrisd.twitter.controller.UserDetailsController">
+		<constructor-arg ref="dao"/>
 	</bean>
 
 </beans>

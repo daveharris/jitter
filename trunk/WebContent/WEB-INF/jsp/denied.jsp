@@ -9,7 +9,7 @@
 	
 	<h2>
 		Sorry but your access has been denied.  Please contact your System Administrator <br />
-		You can got back to the homepage <a href="home.htm">by clicking here</a>
+		You can got back to the homepage <a href="home">by clicking here</a>
 	 </h2>
 	 
 </body>

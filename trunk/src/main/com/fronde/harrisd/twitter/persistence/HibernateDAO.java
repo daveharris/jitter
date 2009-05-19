@@ -17,11 +17,11 @@ public class HibernateDAO extends HibernateDaoSupport implements DAO {
 //	 *          the Hibernate session factory
 //	 */
 //	public HibernateDAO(SessionFactory sessionFactory) {
-//		this.sessionFactory = sessionFactory;
+//			this.sessionFactory = sessionFactory;
 //	}
 
 //	protected HibernateDAO() {
-//		// needed for aop cglib
+//		//needed for aop cglib
 //	}
 
 	public void save(Domain object) {
@@ -60,8 +60,10 @@ public class HibernateDAO extends HibernateDaoSupport implements DAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Domain> findAll(Class clazz) {
-		return getHibernateTemplate().loadAll(clazz);
-		//Query query = getHibernateTemplate().createQuery("from " + clazz.getName());
+		//return getHibernateTemplate().loadAll(clazz);
+		//Query query = getHibernateTemplate().createQuery();
 		//return query.list();
+		//getSessionFactory().getCurrentSession().beginTransaction();
+		return getSessionFactory().getCurrentSession().createQuery("from " + clazz.getName()).list();
 	}
 }

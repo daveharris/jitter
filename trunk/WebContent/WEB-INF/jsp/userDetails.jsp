@@ -21,7 +21,7 @@
 			<div id="sidebar">
 				<h1>More Information</h1>
 				<div class="submenu">
-					<a href="home.htm">Home</a>				  
+					<a href="home">Home</a>				  
 					<a href="http://www.twitter.com">The Real Twitter</a>
 					<a href="http://failwhale.com/">The Fail Whale</a>
 				</div>
