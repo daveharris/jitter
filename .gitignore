@@ -1,0 +1,6 @@
+# Class files
+WebContent/WEB-INF/classes/
+
+# Misc files
+.DS_Store
+.settings

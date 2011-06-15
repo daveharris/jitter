@@ -11,7 +11,7 @@
             	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 							
 	<!--Enable @Autowire annotation >
-	<context:component-scan base-package="com.fronde.harrisd.twitter.controller" /-->
+	<context:component-scan base-package="com.fronde.harrisd.jitter.controller" /-->
 
 	<!-- Security Settings -->
 	<import resource="security-config.xml" />
@@ -22,10 +22,14 @@
 	<!-- The actual database to connect to (using built-in pooling and no JIDI lookup) -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/twitter" />
-		<property name="username" value="twitter" />
-		<property name="password" value="twitter" />
+		<property name="url" value="jdbc:mysql://localhost:3306/jitter" />
+		<property name="username" value="jitter" />
+		<property name="password" value="j1tt3r" />
 	</bean>
+  
+  <!--jdbc:initialize-database data-source="dataSource">
+    <jdbc:script location="classpath:/create-db.sql" />
+  </jdbc:initialize-database-->
 	
 	<!-- A Hibernate SessionFactory for mapping objects to relation tables -->
 	<bean id="sessionFactory"
@@ -33,8 +37,8 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mappingLocations">
 			<list>
-				<value>classpath:com/fronde/harrisd/twitter/persistence/orm-mapping/User.hbm.xml</value>
-				<value>classpath:com/fronde/harrisd/twitter/persistence/orm-mapping/Post.hbm.xml</value>
+				<value>classpath:com/fronde/harrisd/jitter/persistence/orm-mapping/User.hbm.xml</value>
+				<value>classpath:com/fronde/harrisd/jitter/persistence/orm-mapping/Post.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -52,7 +56,7 @@
   	<property name="sessionFactory" ref="sessionFactory"/>
   </bean>
   
-  <bean id="hibernateDAO" class="com.fronde.harrisd.twitter.persistence.HibernateDAO">
+  <bean id="hibernateDAO" class="com.fronde.harrisd.jitter.persistence.HibernateDAO">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
@@ -73,11 +77,11 @@
 	<!-- Controllers -->
 	<bean id="urlFilenameViewController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
 	
-	<bean id="homePageController" class="com.fronde.harrisd.twitter.controller.HomePageController">
+	<bean id="homePageController" class="com.fronde.harrisd.jitter.controller.HomePageController">
 		<constructor-arg ref="dao"/>
 	</bean>
 	
-	<bean id="userDetailsController" class="com.fronde.harrisd.twitter.controller.UserDetailsController">
+	<bean id="userDetailsController" class="com.fronde.harrisd.jitter.controller.UserDetailsController">
 		<constructor-arg ref="dao"/>
 	</bean>
 

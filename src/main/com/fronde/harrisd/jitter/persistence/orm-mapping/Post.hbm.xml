@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+  <!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+ 
+  <hibernate-mapping> 
+      <class name="com.fronde.harrisd.jitter.model.Post" table="Post" >
+          <id name="id" type="int" column="id" >
+                <generator class="increment" />
+          </id>
+          <many-to-one name="author" class="com.fronde.harrisd.jitter.model.User" column="author" lazy="false" />
+          <property name="body" type="java.lang.String" column="body" length="140" />
+          <property name="date" type="java.util.Date" column="date" />
+      </class>
+ 
+  </hibernate-mapping>

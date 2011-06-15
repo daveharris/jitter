@@ -18,12 +18,12 @@
 			class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">            
 	  <property name="mappings">
 	    <props>
-	    	<prop key="login.htm">urlFilenameViewController</prop>
-	    	<prop key="logout.htm">urlFilenameViewController</prop>
-	    	<prop key="denied.htm">urlFilenameViewController</prop>
+	    	<prop key="login">urlFilenameViewController</prop>
+	    	<prop key="logout">urlFilenameViewController</prop>
+	    	<prop key="denied">urlFilenameViewController</prop>
 	    	
-	      <prop key="home.htm">homePageController</prop>
-	      <prop key="userDetails.htm">userDetailsController</prop>
+	      <prop key="home">homePageController</prop>
+	      <prop key="/userDetails*">userDetailsController</prop>
 	    </props>
 	  </property>
   </bean>

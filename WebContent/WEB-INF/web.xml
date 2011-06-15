@@ -17,7 +17,7 @@
 
 	<!-- Application  dispathch servlet settings -->
 	<servlet>
-		<servlet-name>twitter</servlet-name>
+		<servlet-name>jitter</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -26,9 +26,13 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>twitter</servlet-name>
-		<url-pattern>*.htm</url-pattern>
+		<servlet-name>jitter</servlet-name>
+		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>jitter</servlet-name>
+    <url-pattern>/userDetails/*</url-pattern>
+  </servlet-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
@@ -44,5 +48,21 @@
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+  
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+      <taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+      <taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://www.springframework.org/tags</taglib-uri>
+      <taglib-location>/WEB-INF/tld/spring.tld</taglib-location>
+    </taglib>    
+  </jsp-config>
+  
 
 </web-app>

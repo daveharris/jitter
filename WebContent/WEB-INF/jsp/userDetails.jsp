@@ -9,7 +9,7 @@
 		
 		<div id="header">
 			<h1>Welcome to <%= Constants.APPLICATION_NAME %></h1>
-			<img src="images/twitter.png" alt="logo" class="logo" />
+			<img src="images/jitter.png" alt="logo" class="logo" />
 		</div>
 		
 		<div id="content">			
@@ -22,7 +22,7 @@
 				<h1>More Information</h1>
 				<div class="submenu">
 					<a href="home">Home</a>				  
-					<a href="http://www.twitter.com">The Real Twitter</a>
+					<a href="http://www.jitter.com">The Real Twitter</a>
 					<a href="http://failwhale.com/">The Fail Whale</a>
 				</div>
 			</div>

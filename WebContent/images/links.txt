@@ -1,23 +1,23 @@
-body { background: #9ae4e8 url('http://assets2.twitter.com/images/bg.gif') fixed no-repeat top left; }
-    #front #content { background: transparent url('http://static.twitter.com/images/arr2.gif') no-repeat scroll 25px 0px; }
-    #whatistwitter ul li blockquote { background: url('http://static.twitter.com/images/arr.gif') no-repeat 8% 100%; }
-    .content-bubble-arrow { background-image: url('http://static.twitter.com/images/arr2.gif'); }
-  .status-btn input.round-btn { background-image: url('http://static.twitter.com/images/round-btn.gif'); }
-  .status-btn input.round-btn:hover { background-image: url('http://static.twitter.com/images/round-btn-hover.gif'); }
-  .status-btn input.disabled, .status-btn input.disabled:hover { background-image: url('http://static.twitter.com/images/round-btn.gif'); }
-  .hentry .actions .fav { background-image: url('http://static.twitter.com/images/icon_star_full.gif'); }
-  .hentry .actions .non-fav { background-image: url('http://static.twitter.com/images/icon_star_empty.gif'); }
-  .hentry .actions .fav-throb, .hentry .actions a.del-throb { background-image: url('http://static.twitter.com/images/icon_throbber.gif'); }
-  .hentry .actions .del { background-image: url('http://static.twitter.com/images/icon_trash.gif'); }
-  body#show .reply, .hentry .actions .reply { background-image: url('http://static.twitter.com/images/icon_reply.gif'); }
-  .direct_message .actions .reply { background-image: url('http://static.twitter.com/images/icon_direct_reply.gif'); }
-  .direct_message .actions .del { background-image: url('http://static.twitter.com/images/icon_trash.gif'); }
-  .notify { background-image: url('http://static.twitter.com/images/girl.gif'); }
-  ul#tabMenu a#keyword_search_tab.hover, ul#tabMenu a:hover { background-image: url('http://static.twitter.com/images/pale.png'); background-color: transparent; }
-  div#follow-toggle.closed { background-image: url('http://static.twitter.com/images/toggle_closed.gif'); }
-  div#follow-toggle.opened { background-image: url('http://static.twitter.com/images/toggle_opened.gif'); }
-  .follow-actions .following { background-image: url('http://static.twitter.com/images/checkmark.gif'); }
-  .more { background-image: url('http://static.twitter.com/images/more.gif'); }
-  .more.loading { background-image: url('http://static.twitter.com/images/ajax.gif'); }
-  body#show .protected { background-image: url('http://static.twitter.com/images/icon_lock.gif'); }
-  .rss { background-image: url('http://static.twitter.com/images/rss.gif'); }
+body { background: #9ae4e8 url('http://assets2.jitter.com/images/bg.gif') fixed no-repeat top left; }
+    #front #content { background: transparent url('http://static.jitter.com/images/arr2.gif') no-repeat scroll 25px 0px; }
+    #whatisjitter ul li blockquote { background: url('http://static.jitter.com/images/arr.gif') no-repeat 8% 100%; }
+    .content-bubble-arrow { background-image: url('http://static.jitter.com/images/arr2.gif'); }
+  .status-btn input.round-btn { background-image: url('http://static.jitter.com/images/round-btn.gif'); }
+  .status-btn input.round-btn:hover { background-image: url('http://static.jitter.com/images/round-btn-hover.gif'); }
+  .status-btn input.disabled, .status-btn input.disabled:hover { background-image: url('http://static.jitter.com/images/round-btn.gif'); }
+  .hentry .actions .fav { background-image: url('http://static.jitter.com/images/icon_star_full.gif'); }
+  .hentry .actions .non-fav { background-image: url('http://static.jitter.com/images/icon_star_empty.gif'); }
+  .hentry .actions .fav-throb, .hentry .actions a.del-throb { background-image: url('http://static.jitter.com/images/icon_throbber.gif'); }
+  .hentry .actions .del { background-image: url('http://static.jitter.com/images/icon_trash.gif'); }
+  body#show .reply, .hentry .actions .reply { background-image: url('http://static.jitter.com/images/icon_reply.gif'); }
+  .direct_message .actions .reply { background-image: url('http://static.jitter.com/images/icon_direct_reply.gif'); }
+  .direct_message .actions .del { background-image: url('http://static.jitter.com/images/icon_trash.gif'); }
+  .notify { background-image: url('http://static.jitter.com/images/girl.gif'); }
+  ul#tabMenu a#keyword_search_tab.hover, ul#tabMenu a:hover { background-image: url('http://static.jitter.com/images/pale.png'); background-color: transparent; }
+  div#follow-toggle.closed { background-image: url('http://static.jitter.com/images/toggle_closed.gif'); }
+  div#follow-toggle.opened { background-image: url('http://static.jitter.com/images/toggle_opened.gif'); }
+  .follow-actions .following { background-image: url('http://static.jitter.com/images/checkmark.gif'); }
+  .more { background-image: url('http://static.jitter.com/images/more.gif'); }
+  .more.loading { background-image: url('http://static.jitter.com/images/ajax.gif'); }
+  body#show .protected { background-image: url('http://static.jitter.com/images/icon_lock.gif'); }
+  .rss { background-image: url('http://static.jitter.com/images/rss.gif'); }

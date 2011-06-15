@@ -17,7 +17,7 @@
 
 	<div id="container" class="subpage">
 		<span id="loader" style="display: none">
-			<img alt="Loader" src="http://assets0.twitter.com/images/loader.gif" />
+			<img alt="Loader" src="http://assets0.jitter.com/images/loader.gif" />
 		</span>
 
 		<h1 id="header">
@@ -35,7 +35,7 @@
 				<td id="content" class="round-left column">
 					<div class="wrapper">
 				
-					<%--form action="http://twitter.com/status/update" class="status-update-form" id="status_update_form" method="post"--%>
+					<%--form action="http://jitter.com/status/update" class="status-update-form" id="status_update_form" method="post"--%>
 					<form:form commandName="post" cssClass="status-update-form" id="status_update_form">
 						<div style="margin: 0; padding: 0">
 							
@@ -114,8 +114,8 @@
 			       <div id="side">
 							<div id="profile" class="section">
 								<div class="user_icon">
-			    				<a href="http://twitter.com/gnubie" class="url" rel="contact" title="gnubie">
-			    					<img alt="gnubie" class="side_thumb photo fn" height="48" src="http://s3.amazonaws.com/twitter_production/profile_images/53784458/Me_normal.jpg" width="48" />
+			    				<a href="http://jitter.com/gnubie" class="url" rel="contact" title="gnubie">
+			    					<img alt="gnubie" class="side_thumb photo fn" height="48" src="http://s3.amazonaws.com/jitter_production/profile_images/53784458/Me_normal.jpg" width="48" />
 			    				</a>
 			    				<p id="me_name">gnubie</p>
 								</div>
@@ -175,7 +175,7 @@
 			<div id="sidebar">
 			<h1>More Information</h1>
 			<div class="submenu"><a href="home.htm">Home</a> <a
-				href="http://www.twitter.com">The Real Twitter</a> <a
+				href="http://www.jitter.com">The Real Twitter</a> <a
 				href="http://failwhale.com/">The Fail Whale</a></div>
 			</div>
 
@@ -193,7 +193,7 @@
 					</tr>
 					<tr>
 						<td>
-						<div id="twitterUpdate"
+						<div id="jitterUpdate"
 							onKeyDown="javascript:updateCharCounter();"
 							onKeyUp="javascript:updateCharCounter();"><form:textarea
 							path="body" rows="2" cols="40" /></div>
@@ -230,12 +230,12 @@
 	      <li class="first">&copy; 2009 Twitter</li>
 	      <li><a href="/about#about">About Us</a></li>	
 	      <li><a href="/about#contact">Contact</a></li>
-	      <li><a href="http://blog.twitter.com">Blog</a></li>
-	      <li><a href="http://status.twitter.com">Status</a></li>
+	      <li><a href="http://blog.jitter.com">Blog</a></li>
+	      <li><a href="http://status.jitter.com">Status</a></li>
         <li><a href="/downloads">Apps</a></li>
-        <li><a href="http://apiwiki.twitter.com/">API</a></li>
-	      <li><a href="http://search.twitter.com">Search</a></li>
-	      <li><a href="http://help.twitter.com">Help</a></li>
+        <li><a href="http://apiwiki.jitter.com/">API</a></li>
+	      <li><a href="http://search.jitter.com">Search</a></li>
+	      <li><a href="http://help.jitter.com">Help</a></li>
 	      <li><a href="/jobs">Jobs</a></li>
 	      <li><a href="/tos">Terms</a></li>
 	      <li><a href="/privacy">Privacy</a></li>
@@ -245,10 +245,10 @@
 	  <div id="navigation">
 	    <ul class="horizontal-nav top-nav round" style="display:inline">
 		    <li><a href="/home" id="home_link">Home</a></li>
-		    <li><a href="http://twitter.com/gnubie" id="profile_link">Profile</a></li>
-		    <li><a href="http://twitter.com/invitations/find_on_twitter" id="find_people_link">Find People</a></li>
+		    <li><a href="http://jitter.com/gnubie" id="profile_link">Profile</a></li>
+		    <li><a href="http://jitter.com/invitations/find_on_jitter" id="find_people_link">Find People</a></li>
 		    <li><a href="/account/settings" id="settings_link">Settings</a></li>
-		    <li><a href="http://help.twitter.com" id="help_link">Help</a></li>
+		    <li><a href="http://help.jitter.com" id="help_link">Help</a></li>
 		    <li class="last">
 		    	<a id="sign_out_link" href="/account/logout" onclick="document.getElementById('sign_out_form').submit(); return false;">Sign out</a>
 		    	<%@ include file="includes/logout-fragment.jsp" %>
